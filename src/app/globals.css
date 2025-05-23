@@ -1,0 +1,80 @@
+:root{
+  font-size: 14px;
+
+  @mixin larger-than 780px {
+    font-size: 16px
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--mantine-font-family-headings);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+.fade_in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.fade_out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-out keyframes */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

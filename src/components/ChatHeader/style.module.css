@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex-direction: row;
+  padding: 20px;
+  position: relative;
+  flex-wrap: wrap;
+  top: 0;
+  
+  @mixin light{
+    border-bottom: 1px solid var(--mantine-color-gray-2);
+  }
+  @mixin dark{
+    border-bottom: 1px solid var(--mantine-color-gray-8);
+  }
+}
+
+.switch_container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.profile_info {
+  display: flex;
+  gap: 10px;
+  min-width: 300px;
+}

@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  display: block;
+  padding: 20px 20px 270px;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow: auto;
+
+  @mixin larger-than 780px {
+    padding: 20px 20px 230px;
+  }
+}
+
+.scroll_down {
+  position: sticky;
+  right: 20px;
+  bottom: 0;
+  margin-left: calc(100% - 50px);
+  box-sizing: border-box;
+  box-shadow: var(--mantine-shadow-lg);
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-style: solid;
+
+  @mixin dark {
+    outline-color: var(--mantine-color-dark-3);
+  }
+  @mixin light {
+    outline-color: var(--mantine-color-dark-1);
+  }
+}

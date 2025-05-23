@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  height: 100vh;
+  max-height: 100lvh;
+  overflow: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  @mixin light{
+    outline: 1px solid var(--mantine-color-gray-2);
+  }
+  @mixin dark{
+    outline: 1px solid var(--mantine-color-gray-8);
+  }
+
+}

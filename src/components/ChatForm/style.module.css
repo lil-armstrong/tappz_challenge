@@ -1,0 +1,60 @@
+.container {
+  position: absolute;
+  bottom: 20px;
+  min-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--mantine-color-default);
+
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--mantine-radius-md);
+  box-shadow: var(--mantine-shadow-xl);
+  outline-offset: 0;
+  @mixin dark{
+    outline: 3px solid var(--mantine-color-dark-0);
+  }
+  @mixin light{
+    outline: 3px solid var(--mantine-color-dark-4);
+  }
+}
+
+.textbox {
+  border: none;
+  background: none;
+  appearance: none;
+  resize: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-grow: 1;
+  padding: 10px;
+
+
+  &:focus,
+  &:focus-within {
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.file {
+  position: relative;
+  pointer-events: all;
+  cursor: pointer;
+
+  label {
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px
+  }
+}
+
+.file_upload {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
