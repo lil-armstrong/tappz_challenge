@@ -1,7 +1,9 @@
 import { formatDate } from "@/utils/date";
 import { AspectRatio, Text } from "@mantine/core";
 import clsx from "clsx";
+import { motion } from "motion/react";
 import Image from "next/image";
+import { useRef } from "react";
 import { BiCloudDownload } from "react-icons/bi";
 import classes from "./style.module.css";
 import { IBlobProps, IProps } from "./type";
@@ -57,13 +59,16 @@ const BlobRenderer = ({ url, alt, type }: IBlobProps) => {
 const ChatBubble = ({ isSender = false, message }: IProps) => {
   const { timestamp, blob, type = "text", text = "" } = message;
   const date = formatDate(timestamp);
+  const ref = useRef<HTMLDivElement>(null);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: isSender ? "100%" : "-100%", y: 50 }}
+      animate={{ opacity: 1, x: "0%", y: 0 }}
+      ref={ref}
       className={clsx(
         isSender ? classes.sender_bubble : classes.recipient_bubble,
-        classes.bubble,
-        "fade_in"
+        classes.bubble
       )}
     >
       {blob && (
@@ -88,7 +93,7 @@ const ChatBubble = ({ isSender = false, message }: IProps) => {
         </Text>
         <Text className={classes.text}>{text}</Text>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

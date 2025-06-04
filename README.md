@@ -11,9 +11,9 @@
 1. Clone the app from the git repository
 2. Install all the required application packages by running the command:
 ```shell
-yarn
+yarn install
 ```
-Or if you are using NPM, then first delete the `yarn.lock` file and the run the following command:
+    Or if you are using NPM, then first delete the `yarn.lock` file and the run the following command:
 ```shell
 npm install
 ```
@@ -29,7 +29,7 @@ npm run dev
 ## Architecture
 So in this architecture, data flows from the zustand store to the `Chat` component which composes the whole chat interface UI and feeds the rest of the other components the necessary data. Every view is separated into smaller components so its easier to independently configure and stlye. I choose this approach since this is a simple app. However, I have tried to ensure that I kept the levels of prop drilling low by combining multiple props as objects and using the zustand store to share data across components.
 
-To compose the UI, I used the [Mantine design library](https://mantine.dev) components together with custom elements I styled using CSS modules and basic css. I didn't see the need to use a library like Framer since the animation used was basic.
+To compose the UI, I used the [Mantine design library](https://mantine.dev) components together with custom elements I styled using CSS modules and basic css. 
 
 
 1. **Data store**: In this architecture, data flows from a central store, created using Zustand library. You can find the store located at `src/store`. The store holds all the messages. The store provides a function for adding a message. When a new message is sent, the store takes care of generating the necessary data (date generation, media conversion) to ensure that the message is saved in a complete form. This allows the components responsible for displaying the UI only focus on what data matter to them.
